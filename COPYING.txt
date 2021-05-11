@@ -1,0 +1,5 @@
+This code is placed in the PUBLIC DOMAIN. It is provided on an "as is" basis
+without any warranty of any kind, including, without limitation, the implied
+warranties of merchantability and fitness for a particular purpose and their
+equivalents under the laws of any jurisdiction. Put briefly, use this at your
+own risk.
