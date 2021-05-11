@@ -2,7 +2,7 @@
 # First version: 2021-05-08
 # This version: 2021-05-11
 
-# RV64I mit RARS 1.5
+# RV64I via RARS 1.5
 
 .eqv	MAX_FIBO	10	# Largest n
 .eqv	PRINT_INT	1	# System call: print_int
