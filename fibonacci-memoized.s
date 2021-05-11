@@ -25,7 +25,7 @@ text_post:	.asciz "\n"
 	
 init_loop:
 	sd t0, 0(t2)
-	addi t2, t2, 64		# Assumes RV64
+	addi t2, t2, 8 		# Assumes RV64: 64 bit -> 8 byte
 	addi t1, t1, -1
 	bgez t1, init_loop
 	
@@ -34,7 +34,7 @@ init_loop:
 	la t1, storage
 	sd t0, 0(t1)		# fibo(0) = 0 -> storage
 	li t0, 1
-	sd t0, 64(t1)		# fibo(1) = 1 --> storage+64
+	sd t0, 8(t1)		# fibo(1) = 1 --> storage+8
 	
 	# Main
 	li a0, 0		# Clear accumulator
@@ -75,7 +75,7 @@ fibo:
 	# Argument n is in a0. First, see if we already 
 	# know the value
 	la t2, storage
-	li t1, 64
+	li t1, 8
 	mul t1, t1, a0		# Turn n into an offset for storage
 	add t2, t2, t1		# Address in storage
 	ld t1, 0(t2)
@@ -123,6 +123,6 @@ is_known:
 	.data 
 storage:
 	# RARS doesn't seem to allow math for parameters. This assumes
-	# MAX_FIBO of 10
-	.space 640
+	# MAX_FIBO of 10 with 64 bit (8 byte) values
+	.space 88 
 	
